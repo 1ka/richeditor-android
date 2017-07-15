@@ -302,6 +302,13 @@ public class RichEditor extends WebView {
     exec("javascript:RE.setUnderline();");
   }
 
+  public void setFontColor(int color) {
+    exec("javascript:RE.prepareInsert();");
+
+    String hex = convertHexColorString(color);
+    exec("javascript:RE.setFontColor('"+hex+"')");
+  }
+
   public void setTextColor(int color) {
     exec("javascript:RE.prepareInsert();");
 

@@ -130,6 +130,11 @@ RE.setNumbers = function() {
     document.execCommand('insertOrderedList', false, null);
 }
 
+RE.setFontColor = function(color) {
+    var selection = window.getSelection();
+    document.execCommand("insertHTML", false, "<font color='"+color+"'>"+selection+"</font>");
+}
+
 RE.setTextColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
